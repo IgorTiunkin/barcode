@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>QR Code Image</title>
+</head>
+<body>
+
+<h1>QR Code Image</h1>
+
+<img th:src="'data:image/png;base64,' + ${encodedImage}" alt="QR Code Image"/>
+
+</body>
+</html>

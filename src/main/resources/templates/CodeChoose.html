@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>QR Code Image</title>
+</head>
+<body>
+<div>
+    <form th:method="POST" th:action="@{/qr/create}" th:object="${request}">
+        <label for="text" th:text="'Insert link'"></label>
+        <input type="text" th:field="*{text}" id="text">
+        <ul style="padding-left: 0px">
+            <li style="display: inline" th:each="type : ${barcodes}">
+                <input type="radio"
+                       th:id="${type}" name="type"
+                       th:field="*{barcodeFormat}" th:value="${type}"/>
+                <label th:for = "${type}"
+                       th:text="${type}"></label>
+            </li>
+        </ul>
+        <input type="submit" value="Convert">
+    </form>
+</div>
+
+</body>
+</html>
